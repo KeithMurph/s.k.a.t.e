@@ -12,24 +12,25 @@ skate = []
 usedTricks = []
 currentTrick = ''
 game_active = True
-bails = (' rolled their ankle!', ' creditcard themselves!', ' got a shinner!', ' fell on face', ' broke their board!', ' hit a rock!')
+bails = (' rolled their ankle!', ' creditcard themselves!',' got a shinner!', ' fell on face', ' broke their board!', ' hit a rock!')
 streak = 6
 # function to check used tricks
 
 # functions trick makes and bails
 
+
 def trickLand():
     print('...')
     sleep(0.5)
-    print(Fore.CYAN + name + Fore.YELLOW +' landed '  + currentTrick + ' 🛹')
+    print(Fore.CYAN + name + Fore.YELLOW + ' landed ' + currentTrick + ' 🛹')
     print()
-    
+
+
 def trickBail():
     print('...')
     sleep(.5)
     print(name + Fore.RED + random.choice(bails))
     print()
-    
 
 
 # function to check current letter
@@ -62,7 +63,7 @@ print(f"Welcome {Fore.GREEN + name}" + Fore.YELLOW + ' goodluck!')
 sleep(1)
 print(Fore.CYAN + "The rules are simple match the computer's tricks and don't reach 'S.K.A.T.E'")
 
-print(Fore.GREEN +"TRICKLIST:"+ Fore.WHITE + " type 'list' to view during game"), print(Fore.YELLOW, trickDict)
+print(Fore.GREEN + "TRICKLIST:" + Fore.WHITE +" type 'list' to view during game"), print(Fore.YELLOW, trickDict)
 sleep(1.5)
 
 # Game loop
@@ -104,113 +105,133 @@ while game_active == True:
     elif skate == ['S', 'K', 'A', 'T', 'E']:
         game_active = False
 # ollie
-    elif trickSelection == 'ol' or trickSelection == 'ollie':
-        if random.choice(odds) >= 30:
-           trickLand()
-           streak -= 1
+    if currentTrick == 'OLLIE':
+        if trickSelection == 'ol' or trickSelection == 'ollie':
+            if random.choice(odds) >= 30:
+                trickLand()
+                streak -= 1
 
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # kickflip
+    if currentTrick == 'KICKFLIP':
+        if trickSelection == 'kf' or trickSelection == 'kickflip':
+            if random.choice(odds) >= 55:
+                trickLand()
+                streak -= 1
 
-# kickflip
-    elif trickSelection == 'kf' or trickSelection == 'kickflip':
-        if random.choice(odds) >= 55:
-            trickLand()
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # heelflip
+    if currentTrick == 'HEELFLIP':
+        if trickSelection == 'hf' or trickSelection == 'heelflip':
+            if random.choice(odds) >= 60:
+                trickLand()
+                streak -= 1
 
-# heelflip
-    elif trickSelection == 'hf' or trickSelection == 'heelflip':
-        if random.choice(odds) >= 60:
-            trickLand() 
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # backside shuvit
+    if currentTrick == 'BS SHUVIT':
+        if trickSelection == 'bssh' or trickSelection == 'bs shuv':
+            if random.choice(odds) >= 40:
+                trickLand()
+                streak -= 1
 
-# backside shuvit
-    elif trickSelection == 'bssh' or trickSelection == 'bs shuv':
-        if random.choice(odds) >= 40:
-            trickLand()
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # frontside shuvit
+    if currentTrick == 'FS SHUVIT':
 
-# frontside shuvit
-    elif trickSelection == 'fssh' or trickSelection == 'fs shuvit':
-        if random.choice(odds) >= 45:
-            trickLand()
-            streak -= 1
+        if trickSelection == 'fssh' or trickSelection == 'fs shuvit':
+            if random.choice(odds) >= 45:
+                trickLand()
+                streak -= 1
 
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # frontside 180
+    if currentTrick == 'FS 180':
+        if trickSelection == 'fs180' or trickSelection == 'fs 180':
+            if random.choice(odds) >= 50:
+                trickLand()
+                streak -= 1
 
-# frontside 180
-    elif trickSelection == 'fs180' or trickSelection == 'fs 180':
-        if random.choice(odds) >= 50:
-            trickLand()
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # backside 180
+    if currentTrick == 'BS 180':
+        if trickSelection == 'bs180' or trickSelection == 'bs 180':
+            if random.choice(odds) >= 50:
+                trickLand()
+                streak -= 1
 
-# backside 180
-    elif trickSelection == 'bs180' or trickSelection == 'bs 180':
-        if random.choice(odds) >= 50:
-            trickLand()
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False
         else:
-            trickBail()
-            checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
+            print(name + Fore.RED + ' flailed their board! 🛹')
+            checkLetter()            
 
+    # treflip
+    if currentTrick == 'TREFLIP':
+        if trickSelection == 'tre' or trickSelection == 'treflip':
+            if random.choice(odds) >= 75:
+                trickLand()
+                streak -= 1
 
-# treflip
-    elif trickSelection == 'tre' or trickSelection == 'treflip':
-        if random.choice(odds) >= 75:
-            trickLand()
-            streak -= 1
-
+            else:
+                trickBail()
+                checkLetter()
+                if skate == ['S', 'K', 'A', 'T', 'E']:
+                    game_active = False          
         else:
-            trickBail()
+            print(name + Fore.RED + ' flailed their board! 🛹')
             checkLetter()
-            if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False
-# list
-    elif trickSelection == 'list':
-        print(Fore.LIGHTWHITE_EX +"TRICKLIST:"), print(Fore.LIGHTWHITE_EX, trickDict)
 
-    
-# else condition
-    else:
-        print(name + Fore.RED + ' flailed their board! 🛹')
-        checkLetter()
+
+
