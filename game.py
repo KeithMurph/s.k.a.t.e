@@ -98,7 +98,7 @@ while game_active == True:
     if len(usedTricks) == len(trickDict):
         usedTricks.clear()
 
-    if streak <= 1:
+    if streak <=1 :
         print(Fore.GREEN + ' You have worn put the computer you win!')
         game_active = False
 # trick selections with odds
