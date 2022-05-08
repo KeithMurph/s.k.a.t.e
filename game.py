@@ -5,18 +5,15 @@ from colorama import init, Fore, Back, Style
 # tricklist
 trickDict = {'ol': 'OLLIE', 'kf': 'KICKFLIP', 'hf': 'HEELFLIP', 'bssh': 'BS SHUV', 'fssh': 'FS SHUV', 'fs180': 'FS 180', 'bs180': 'BS 180', 'tre': 'TREFLIP'}
 odds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+
+# game score s.k.a.t.e
 skate = []
 usedTricks = []
+currentTrick = ''
 game_active = True
 bails = ('rolled ankle!', 'creditcard!', 'shinner!', 'fell on face', 'broken board!', 'hit a rock!')
 
-# function to see if trick in used tricks
-# def checkTrick():
-    # if currentTrick not in usedTricks:
-        # usedTricks.append(currentTrick)
-        # print('Used Tricks:', usedTricks)
-
-# function to pick current trick
+# function to check used tricks
 
 
 # function to check current letter
@@ -24,6 +21,7 @@ def checkLetter():
     if skate == []:
         skate.append('S')
         print(skate)
+
     elif skate == ['S']:
         skate.append('K')
         print(skate)    
@@ -35,40 +33,57 @@ def checkLetter():
         print(skate)
     elif skate == ['S', 'K', 'A', 'T']:
         skate.append('E')
-        print('You have lost ☠️')
+        print('You have lost ☠️', name)
         print(skate)
     
 # Introduction to the game
 name = input(Fore.YELLOW + "What is your name? ")
 sleep(.5)
 print(Fore.CYAN + f"Hello {Fore.GREEN + name}", Fore.CYAN + "Welcome to the game of S.K.A.T.E")
-sleep(2)
+sleep(1)
 print(Fore.YELLOW + "The rules are simple match the computer's tricks to win!")
 print(Fore.WHITE, trickDict)
-sleep(3)
+sleep(1.5)
 
 # Game loop
 while game_active == True:
-    # generate random trick
-    currentTrick = random.choice(list(trickDict.values()))
-    # check if trick is already used
-  
+
     
+
+    # generate random trick and check if it has been used
+    
+    if currentTrick not in usedTricks:
+            usedTricks.append(currentTrick)
+        
+        
+    while currentTrick in usedTricks:
+        currentTrick = random.choice(list(trickDict.values()))
+
+
     sleep(1)
     print(name,"'s score:" , Fore.GREEN, skate)
+    # print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
     print(Fore.CYAN + f"The computer has chosen {currentTrick}")
     print(Fore.YELLOW + 'enter trick:')
-    trickSelection = input()
+
+
+# trick input
+    trickSelection = str.lower(input())
     
+
 
 # end condition for game
     if trickSelection == 'exit':
         game_active = False
 
+    if len(usedTricks) >= 7:
+        print(Fore.GREEN + 'The Cpu ran out of tricks you win! 🎉' , name)
+        game_active = False
+
 # trick selections with odds
 
 # ollie
-    elif trickSelection == 'ol':
+    elif trickSelection == 'ol' or trickSelection == 'ollie':
         if random.choice(odds) >= 30:
             print(Fore.GREEN + 'OLLIE! 🛹')
 
@@ -79,7 +94,7 @@ while game_active == True:
                 game_active = False
 
 # kickflip
-    elif trickSelection == 'kf':
+    elif trickSelection == 'kf' or trickSelection == 'kickflip':
         if random.choice(odds) >= 40:
             print(Fore.GREEN + 'KICKFLIP! 🛹')
 
@@ -90,7 +105,7 @@ while game_active == True:
                 game_active = False
 
 # heelflip
-    elif trickSelection == 'hf':
+    elif trickSelection == 'hf' or trickSelection == 'heelflip':
         if random.choice(odds) >= 60:
             print(Fore.GREEN + 'HEELFLIP! 🛹')
 
@@ -102,7 +117,7 @@ while game_active == True:
 
 
 # backside shuvit
-    elif trickSelection == 'bssh':
+    elif trickSelection == 'bssh' or trickSelection == 'bs shuv':
         if random.choice(odds) >= 40:
             print(Fore.GREEN + 'Backside Shuv! 🛹')
 
@@ -114,7 +129,7 @@ while game_active == True:
 
 
 # frontside shuvit
-    elif trickSelection == 'fssh':
+    elif trickSelection == 'fssh' or trickSelection == 'fs shuvit':
         if random.choice(odds) >= 50:
             print(Fore.GREEN + 'Frontside Shuv! 🛹')
 
@@ -126,7 +141,7 @@ while game_active == True:
 
 
 # frontside 180
-    elif trickSelection == 'fs180':
+    elif trickSelection == 'fs180' or trickSelection == 'fs 180':
         if random.choice(odds) >= 40:
             print(Fore.GREEN + 'Frontside 180! 🛹')
 
@@ -138,7 +153,7 @@ while game_active == True:
 
 
 # backside 180
-    elif trickSelection == 'bs180':
+    elif trickSelection == 'bs180' or trickSelection == 'bs 180':
         if random.choice(odds) >= 60:
             print(Fore.GREEN + 'Backside 180! 🛹')
 
@@ -149,7 +164,7 @@ while game_active == True:
                 game_active = False
 
 # treflip
-    elif trickSelection == 'tre':
+    elif trickSelection == 'tre' or trickSelection == 'treflip':
         if random.choice(odds) >= 70:
             print(Fore.GREEN + 'TREFLIP! 🛹')
 
