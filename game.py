@@ -7,7 +7,7 @@ trickDict = {'ol': 'OLLIE', 'kf': 'KICKFLIP', 'hf': 'HEELFLIP', 'bssh': 'BS SHUV
 odds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 skate = []
 game_active = True
-
+bails = ('rolled ankle!', 'creditcard!', 'shinner!', 'fell on face', 'broken board!', 'hit a rock!')
 
 # function to check current letter
 def checkLetter():
@@ -60,7 +60,7 @@ while game_active == True:
             print(Fore.GREEN + 'OLLIE! 🛹')
 
         else:
-            print(Fore.RED + 'slipped and fell!')
+            print(Fore.RED + random.choice(bails))
             checkLetter()  
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
@@ -71,7 +71,7 @@ while game_active == True:
             print(Fore.GREEN + 'KICKFLIP! 🛹')
 
         else:
-            print(Fore.RED + 'rolled ankle!')
+            print(Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
@@ -82,7 +82,7 @@ while game_active == True:
             print(Fore.GREEN + 'HEELFLIP! 🛹')
 
         else:
-            print(Fore.RED + 'CREDIT CARD!')
+            print(Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
@@ -94,7 +94,7 @@ while game_active == True:
             print(Fore.GREEN + 'Backside Shuv! 🛹')
 
         else:
-            print(Fore.RED + 'SHINNER!')
+            print(Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
@@ -106,7 +106,7 @@ while game_active == True:
             print(Fore.GREEN + 'Frontside Shuv! 🛹')
 
         else:
-            print(Fore.RED + 'Fell on face!')
+            print(Fore.RED + random.choice(bails))
             checkLetter()  
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False 
@@ -118,6 +118,7 @@ while game_active == True:
             print(Fore.GREEN + 'Frontside 180! 🛹')
 
         else:
+            print(Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False                             
@@ -129,7 +130,7 @@ while game_active == True:
             print(Fore.GREEN + 'Backside 180! 🛹')
 
         else:
-            print(Fore.RED + 'Fell on face!')
+            print(Fore.RED + random.choice(bails))
             checkLetter() 
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
@@ -140,7 +141,7 @@ while game_active == True:
             print(Fore.GREEN + 'TREFLIP! 🛹')
 
         else:
-            print(Fore.RED + 'ATE IT!')
+            print(Fore.RED + random.choice(bails))
             checkLetter() 
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
