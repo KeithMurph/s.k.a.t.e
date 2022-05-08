@@ -61,8 +61,8 @@ while game_active == True:
 
 
     sleep(1)
-    print("{name}'s score:" , Fore.GREEN, skate)
-    # print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
+    print(name+"'s score:" , Fore.GREEN, skate)
+    print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
     print(Fore.CYAN + f"The computer did a/an {currentTrick}")
     print(Fore.YELLOW + 'enter trick:')
 
@@ -76,9 +76,10 @@ while game_active == True:
     if trickSelection == 'exit':
         game_active = False
 
-    if len(usedTricks) >= 8:
-        print(Fore.GREEN + 'The Cpu ran out of tricks you win! 🎉' , name)
-        game_active = False
+    if len(usedTricks) == len(trickDict):
+       usedTricks.clear()
+        # print(Fore.GREEN + 'The Cpu ran out of tricks you win! 🎉' , name)
+        # game_active = False
 
 # trick selections with odds
 
