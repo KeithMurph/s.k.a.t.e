@@ -61,9 +61,9 @@ while game_active == True:
 
 
     sleep(1)
-    print(name,"'s score:" , Fore.GREEN, skate)
+    print("{name}'s score:" , Fore.GREEN, skate)
     # print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
-    print(Fore.CYAN + f"The computer has chosen {currentTrick}")
+    print(Fore.CYAN + f"The computer did a/an {currentTrick}")
     print(Fore.YELLOW + 'enter trick:')
 
 
@@ -76,7 +76,7 @@ while game_active == True:
     if trickSelection == 'exit':
         game_active = False
 
-    if len(usedTricks) >= 7:
+    if len(usedTricks) >= 8:
         print(Fore.GREEN + 'The Cpu ran out of tricks you win! 🎉' , name)
         game_active = False
 
@@ -84,7 +84,7 @@ while game_active == True:
 
 # ollie
     elif trickSelection == 'ol' or trickSelection == 'ollie':
-        if random.choice(odds) >= 30:
+        if random.choice(odds) >= 50:
             print(Fore.GREEN + 'OLLIE! 🛹')
 
         else:
@@ -95,7 +95,7 @@ while game_active == True:
 
 # kickflip
     elif trickSelection == 'kf' or trickSelection == 'kickflip':
-        if random.choice(odds) >= 40:
+        if random.choice(odds) >= 70:
             print(Fore.GREEN + 'KICKFLIP! 🛹')
 
         else:
@@ -106,7 +106,7 @@ while game_active == True:
 
 # heelflip
     elif trickSelection == 'hf' or trickSelection == 'heelflip':
-        if random.choice(odds) >= 60:
+        if random.choice(odds) >= 70:
             print(Fore.GREEN + 'HEELFLIP! 🛹')
 
         else:
@@ -118,7 +118,7 @@ while game_active == True:
 
 # backside shuvit
     elif trickSelection == 'bssh' or trickSelection == 'bs shuv':
-        if random.choice(odds) >= 40:
+        if random.choice(odds) >= 70:
             print(Fore.GREEN + 'Backside Shuv! 🛹')
 
         else:
@@ -130,7 +130,7 @@ while game_active == True:
 
 # frontside shuvit
     elif trickSelection == 'fssh' or trickSelection == 'fs shuvit':
-        if random.choice(odds) >= 50:
+        if random.choice(odds) >= 65:
             print(Fore.GREEN + 'Frontside Shuv! 🛹')
 
         else:
@@ -142,7 +142,7 @@ while game_active == True:
 
 # frontside 180
     elif trickSelection == 'fs180' or trickSelection == 'fs 180':
-        if random.choice(odds) >= 40:
+        if random.choice(odds) >= 70:
             print(Fore.GREEN + 'Frontside 180! 🛹')
 
         else:
@@ -154,7 +154,7 @@ while game_active == True:
 
 # backside 180
     elif trickSelection == 'bs180' or trickSelection == 'bs 180':
-        if random.choice(odds) >= 60:
+        if random.choice(odds) >= 70:
             print(Fore.GREEN + 'Backside 180! 🛹')
 
         else:
@@ -165,7 +165,7 @@ while game_active == True:
 
 # treflip
     elif trickSelection == 'tre' or trickSelection == 'treflip':
-        if random.choice(odds) >= 70:
+        if random.choice(odds) >= 80:
             print(Fore.GREEN + 'TREFLIP! 🛹')
 
         else:
@@ -174,5 +174,6 @@ while game_active == True:
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
     else:
-        print('Invalid Input')
+        checkLetter()
+        
         print(trickDict)
