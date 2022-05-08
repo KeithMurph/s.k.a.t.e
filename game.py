@@ -3,8 +3,7 @@ from time import sleep
 from colorama import init, Fore, Back, Style
 
 # tricklist
-trickDict = {'OLLIE': 'ol', 'KICKFLIP': 'kf', 'HEELFLIP': 'hf', 'BS SHUVIT': 'bssh',
-             'FS SHUVIT': 'fssh', 'FS 180': 'fs180', 'BS 180': 'bs180', 'TREFLIP': 'tre'}
+trickDict = {'OLLIE': 'ol', 'KICKFLIP': 'kf', 'HEELFLIP': 'hf', 'BS SHUVIT': 'bssh','FS SHUVIT': 'fssh', 'FS 180': 'fs180', 'BS 180': 'bs180', 'TREFLIP': 'tre'}
 odds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
         51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 
@@ -13,8 +12,7 @@ skate = []
 usedTricks = []
 currentTrick = ''
 game_active = True
-bails = (' rolled their ankle!', ' creditcard themselves!',
-         ' got a shinner!', ' fell on face', ' broke their board!', ' hit a rock!')
+bails = (' rolled their ankle!', ' creditcard themselves!', ' got a shinner!', ' fell on face', ' broke their board!', ' hit a rock!')
 streak = 6
 # function to check used tricks
 
@@ -48,8 +46,7 @@ print(f"Welcome {Fore.GREEN + name}" + Fore.YELLOW + ' goodluck!')
 sleep(1)
 print(Fore.YELLOW + "The rules are simple match the computer's tricks and don't reach 'S.K.A.T.E'")
 
-print(Fore.LIGHTWHITE_EX +
-      "TRICKLIST: type 'list' to view during game"), print(Fore.LIGHTWHITE_EX, trickDict)
+print(Fore.LIGHTWHITE_EX +"TRICKLIST: type 'list' to view during game"), print(Fore.LIGHTWHITE_EX, trickDict)
 sleep(1.5)
 
 # Game loop
@@ -208,8 +205,7 @@ while game_active == True:
                 game_active = False
 # list
     elif trickSelection == 'list':
-        print(Fore.LIGHTWHITE_EX +
-              "TRICKLIST:"), print(Fore.LIGHTWHITE_EX, trickDict)
+        print(Fore.LIGHTWHITE_EX +"TRICKLIST:"), print(Fore.LIGHTWHITE_EX, trickDict)
 
 # else condition
     else:
