@@ -11,7 +11,7 @@ skate = []
 usedTricks = []
 currentTrick = ''
 game_active = True
-bails = ('rolled ankle!', 'creditcard!', 'shinner!', 'fell on face', 'broken board!', 'hit a rock!')
+bails = ('rolled their ankle!', 'creditcard themselves!', 'got a shinner!', 'fell on face', ' broke their board!', 'hit a rock!')
 
 # function to check used tricks
 
@@ -33,16 +33,23 @@ def checkLetter():
         print(skate)
     elif skate == ['S', 'K', 'A', 'T']:
         skate.append('E')
-        print('You have lost ☠️', name)
         print(skate)
+        print('💀 You have lost sorry ', name)
+        game_active = False
+        
     
 # Introduction to the game
-name = input(Fore.YELLOW + "What is your name? ")
-sleep(.5)
-print(Fore.CYAN + f"Hello {Fore.GREEN + name}", Fore.CYAN + "Welcome to the game of S.K.A.T.E")
+print(Fore.GREEN + '🛹 Welcome to the game of S.K.A.T.E!')
 sleep(1)
-print(Fore.YELLOW + "The rules are simple match the computer's tricks to win!")
-print(Fore.WHITE, trickDict)
+print('💻 You will be playing against a computer.')
+sleep(1)
+print('please enter your name:')
+name = input(Fore.YELLOW)
+sleep(.5)
+print(f"Hello {Fore.GREEN + name}")
+sleep(1)
+print(Fore.YELLOW + "The rules are simple match the computer's tricks and don't reach 'S.K.A.T.E'")
+print(Fore.LIGHTWHITE_EX, trickDict)
 sleep(1.5)
 
 # Game loop
@@ -61,14 +68,14 @@ while game_active == True:
 
 
     sleep(1)
-    print(name+"'s score:" , Fore.GREEN, skate)
-    print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
-    print(Fore.CYAN + f"The computer did a/an {currentTrick}")
-    print(Fore.YELLOW + 'enter trick:')
+    print(Fore.CYAN + f"{name}'s score:" , Fore.YELLOW, skate)
+    #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
+    print(Fore.YELLOW + f"The computer did 🛹 {currentTrick}")
+    print(Fore.GREEN + 'enter trick:')
 
 
 # trick input
-    trickSelection = str.lower(input())
+    trickSelection = str.lower(input(Fore.YELLOW))
     
 
 
@@ -78,102 +85,108 @@ while game_active == True:
 
     if len(usedTricks) == len(trickDict):
        usedTricks.clear()
-        # print(Fore.GREEN + 'The Cpu ran out of tricks you win! 🎉' , name)
-        # game_active = False
 
 # trick selections with odds
 
 # ollie
     elif trickSelection == 'ol' or trickSelection == 'ollie':
-        if random.choice(odds) >= 50:
-            print(Fore.GREEN + 'OLLIE! 🛹')
+        if random.choice(odds) >= 30:
+            print(name+ Fore.GREEN + 'landed an  OLLIE! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name+ Fore.RED + random.choice(bails))
             checkLetter()  
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+           
 
 # kickflip
     elif trickSelection == 'kf' or trickSelection == 'kickflip':
-        if random.choice(odds) >= 70:
-            print(Fore.GREEN + 'KICKFLIP! 🛹')
+        if random.choice(odds) >= 55:
+            print(name+ Fore.GREEN + 'Landed a KICKFLIP! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name + Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+            
 
 # heelflip
     elif trickSelection == 'hf' or trickSelection == 'heelflip':
-        if random.choice(odds) >= 70:
-            print(Fore.GREEN + 'HEELFLIP! 🛹')
+        if random.choice(odds) >= 60:
+            print(name+ Fore.GREEN + 'Landed a HEELFLIP! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name+ Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+            
 
 
 # backside shuvit
     elif trickSelection == 'bssh' or trickSelection == 'bs shuv':
-        if random.choice(odds) >= 70:
-            print(Fore.GREEN + 'Backside Shuv! 🛹')
+        if random.choice(odds) >= 40:
+            print(name +Fore.GREEN + 'Landed a Backside Shuv! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name +Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+           
 
 
 # frontside shuvit
     elif trickSelection == 'fssh' or trickSelection == 'fs shuvit':
-        if random.choice(odds) >= 65:
-            print(Fore.GREEN + 'Frontside Shuv! 🛹')
+        if random.choice(odds) >= 45:
+            print(name+ Fore.GREEN + 'Landed a Frontside Shuv! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
-            checkLetter()  
+            print(name+ Fore.RED + random.choice(bails))
+            checkLetter() 
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False 
+            
 
 
 # frontside 180
     elif trickSelection == 'fs180' or trickSelection == 'fs 180':
-        if random.choice(odds) >= 70:
-            print(Fore.GREEN + 'Frontside 180! 🛹')
+        if random.choice(odds) >= 50:
+            print(name+ Fore.GREEN + 'Landed Frontside 180! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name+ Fore.RED + random.choice(bails))
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
-                game_active = False                             
+                game_active = False
+                                         
 
 
 # backside 180
     elif trickSelection == 'bs180' or trickSelection == 'bs 180':
-        if random.choice(odds) >= 70:
-            print(Fore.GREEN + 'Backside 180! 🛹')
+        if random.choice(odds) >= 50:
+            print(name+ Fore.GREEN + 'Landed a Backside 180! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name+ Fore.RED + random.choice(bails))
             checkLetter() 
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+            
 
 # treflip
     elif trickSelection == 'tre' or trickSelection == 'treflip':
-        if random.choice(odds) >= 80:
-            print(Fore.GREEN + 'TREFLIP! 🛹')
+        if random.choice(odds) >= 75:
+            print(name + Fore.GREEN + 'Landed a TREFLIP! 🛹')
 
         else:
-            print(Fore.RED + random.choice(bails))
+            print(name+ Fore.RED + random.choice(bails))
             checkLetter() 
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
+            
     else:
         checkLetter()
         
