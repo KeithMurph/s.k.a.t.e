@@ -46,7 +46,7 @@ def checkLetter():
         skate.append('E')
         print(skate)
         game_active == False
-        print('💀 You have lost sorry ', name)
+        print(name, '💀 You have lost!!')
         print()
 
 
@@ -77,12 +77,13 @@ while game_active == True:
         currentTrick = random.choice(list(trickDict.keys()))
 
     sleep(1)
-    print(Fore.GREEN + f"{name}'s score:", Fore.YELLOW, skate)
-    print(Fore.GREEN + f"CPU Energy level:", Fore.YELLOW, streak)
-    print()
-    #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
-    print(Fore.YELLOW + f"💻 The computer did 🛹 {currentTrick}")
-    print(Fore.GREEN + 'enter trick:')
+    if skate != ['S', 'K', 'A', 'T', 'E']:
+        print(Fore.GREEN + f"{name}'s score:", Fore.YELLOW, skate)
+        print(Fore.GREEN + f"CPU Energy level:", Fore.YELLOW, streak)
+        print()
+        #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
+        print(Fore.YELLOW + f"💻 The computer did 🛹 {currentTrick}")
+        print(Fore.GREEN + 'enter trick:')
 
 
 # trick input
@@ -100,7 +101,8 @@ while game_active == True:
         print(Fore.GREEN + ' You have worn put the computer you win!')
         game_active = False
 # trick selections with odds
-
+    elif skate == ['S', 'K', 'A', 'T', 'E']:
+        game_active = False
 # ollie
     elif trickSelection == 'ol' or trickSelection == 'ollie':
         if random.choice(odds) >= 30:
@@ -207,9 +209,8 @@ while game_active == True:
     elif trickSelection == 'list':
         print(Fore.LIGHTWHITE_EX +"TRICKLIST:"), print(Fore.LIGHTWHITE_EX, trickDict)
 
+    
 # else condition
     else:
         print(name + Fore.RED + ' flailed their board! 🛹')
         checkLetter()
-
-        print(trickDict)
