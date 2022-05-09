@@ -227,10 +227,12 @@ while game_active == True:
                 trickBail()
                 checkLetter()
                 if skate == ['S', 'K', 'A', 'T', 'E']:
-                    game_active = False          
+                    game_active = False     
+#else condition for bail  
         else:
             print(name + Fore.RED + ' flailed their board! 🛹')
             checkLetter()
+    # win condition for player
     if streak == 0: 
             print(streak)
             print(Fore.GREEN + ' You have worn put the computer you win!')
