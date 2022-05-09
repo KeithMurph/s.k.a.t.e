@@ -12,7 +12,8 @@ skate = []
 usedTricks = []
 currentTrick = ''
 game_active = True
-bails = (' rolled their ankle!', ' creditcard themselves!',' got a shinner!', ' fell on face', ' broke their board!', ' hit a rock!')
+bails = (' rolled their ankle!', ' creditcard themselves!',' got a shinner!', ' just sucks', ' fell on face', ' broke their board!', ' hit a rock!')
+skatjectives = (' POPPED a ', ' barely landed ', ' snapped a BIG OL ', ' landed a ', ' did a sketchy ')
 streak = 6
 # function to check used tricks
 
@@ -22,7 +23,7 @@ streak = 6
 def trickLand():
     print('...')
     sleep(0.5)
-    print(Fore.CYAN + name + Fore.YELLOW + ' landed ' + currentTrick + ' 🛹')
+    print(Fore.CYAN + name + Fore.YELLOW + random.choice(skatjectives) + currentTrick + ' 🛹')
     print()
 
 
