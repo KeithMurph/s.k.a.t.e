@@ -80,7 +80,7 @@ while game_active == True:
     sleep(1)
     if skate != ['S', 'K', 'A', 'T', 'E']:
         print(Fore.GREEN + f"{name}'s score:", Fore.YELLOW, skate)
-        print(Fore.GREEN + f"CPU Energy level:", Fore.YELLOW, streak)
+        print(Fore.GREEN + f"CPU count down...", Fore.YELLOW, streak)
         print()
         #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
         print(Fore.YELLOW + f"💻 The computer did 🛹 {currentTrick}")
@@ -98,9 +98,7 @@ while game_active == True:
     if len(usedTricks) == len(trickDict):
         usedTricks.clear()
 
-    if streak == 1 :
-        print(Fore.GREEN + ' You have worn put the computer you win!')
-        game_active = False
+    
 # trick selections with odds
     elif skate == ['S', 'K', 'A', 'T', 'E']:
         game_active = False
@@ -232,6 +230,9 @@ while game_active == True:
         else:
             print(name + Fore.RED + ' flailed their board! 🛹')
             checkLetter()
-
+    if streak == 0: 
+            print(streak)
+            print(Fore.GREEN + ' You have worn put the computer you win!')
+            game_active = False
 
 
