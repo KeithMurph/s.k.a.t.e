@@ -55,7 +55,7 @@ def checkLetter():
 # Introduction to the game
 print(Fore.GREEN + '🛹 Welcome to the game of S.K.A.T.E!')
 sleep(1)
-print('💻 You will be playing against a computer.')
+print('💻 You will be playing against PC')
 sleep(1)
 print('please enter your name:')
 name = input(Fore.YELLOW)
@@ -81,10 +81,10 @@ while game_active == True:
     sleep(1)
     if skate != ['S', 'K', 'A', 'T', 'E']:
         print(Fore.GREEN + f"{name}'s score:", Fore.YELLOW, skate)
-        print(Fore.GREEN + f"CPU count down...", Fore.YELLOW, streak)
+        print(Fore.GREEN + f"PC count down...", Fore.YELLOW, streak)
         print()
         #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
-        print(Fore.YELLOW + f"💻 The computer did 🛹 {currentTrick}")
+        print(Fore.YELLOW + f"💻 PC did 🛹 {currentTrick}")
         print(Fore.GREEN + 'enter trick:')
 
 
@@ -235,7 +235,11 @@ while game_active == True:
     # win condition for player
     if streak == 0: 
             print(streak)
-            print(Fore.GREEN + ' You have worn put the computer you win!')
+            print(Fore.GREEN + 'PC got tired and walked away...')
+            sleep(3)
+            print('you win')
+            sleep(1)
+            print('I guess')
             game_active = False
 
 
