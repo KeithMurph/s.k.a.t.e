@@ -1,6 +1,5 @@
 import random
 from time import sleep
-from colorama import init, Fore, Back, Style
 
 # tricklist
 trickDict = {'OLLIE': 'ol', 'KICKFLIP': 'kf', 'HEELFLIP': 'hf', 'BS SHUVIT': 'bssh','FS SHUVIT': 'fssh', 'FS 180': 'fs180', 'BS 180': 'bs180', 'TREFLIP': 'tre'}
@@ -16,6 +15,15 @@ bails = (' rolled their ankle!', ' creditcard themselves!', ' got a shinner!', '
 streak = 6
 # function to check used tricks
 
+# TODO
+#  add turn based system
+#  cpu vs player turn
+#  cpu needs own stats for tricks
+#  if cpu turn randomize trick that arent used on 'usedTricks' List
+#  if trick is successful proceed
+#  if unsuccessful switch turn to player
+#  if player turn ask for trick
+#  if trick is successful proceed
 
 # function to check current letter
 def checkLetter():
@@ -35,18 +43,18 @@ def checkLetter():
 
 
 # Introduction to the game
-print(Fore.GREEN + '🛹 Welcome to the game of S.K.A.T.E!')
+print('🛹 Welcome to the game of S.K.A.T.E!')
 sleep(1)
 print('💻 You will be playing against a computer.')
 sleep(1)
 print('please enter your name:')
-name = input(Fore.YELLOW)
+name = input()
 sleep(.5)
-print(f"Welcome {Fore.GREEN + name}" + Fore.YELLOW + ' goodluck!')
+print(f"Welcome {name}" ,' goodluck!')
 sleep(1)
-print(Fore.YELLOW + "The rules are simple match the computer's tricks and don't reach 'S.K.A.T.E'")
+print("The rules are simple match the computer's tricks and don't reach 'S.K.A.T.E'")
 
-print(Fore.LIGHTWHITE_EX +"TRICKLIST: type 'list' to view during game"), print(Fore.LIGHTWHITE_EX, trickDict)
+print("TRICKLIST: type 'list' to view during game"), print(trickDict)
 sleep(1.5)
 
 # Game loop
@@ -61,16 +69,16 @@ while game_active == True:
         currentTrick = random.choice(list(trickDict.keys()))
 
     sleep(1)
-    print(Fore.CYAN + f"{name}'s score:", Fore.YELLOW, skate)
-    print(Fore.CYAN + f"CPU Energy level:", Fore.YELLOW, streak)
+    print(f"{name}'s score:", skate)
+    print(f"CPU Energy level:", streak)
     print()
     #  print(Fore.CYAN + 'cpu used tricklist: ', usedTricks[1:])
-    print(Fore.YELLOW + f"💻 The computer did 🛹 {currentTrick}")
-    print(Fore.GREEN + 'enter trick:')
+    print(f"💻 The computer did 🛹 {currentTrick}")
+    print('enter trick:')
 
 
 # trick input
-    trickSelection = str.lower(input(Fore.YELLOW))
+    trickSelection = str.lower(input())
 
 
 # end condition for game
@@ -81,19 +89,19 @@ while game_active == True:
         usedTricks.clear()
 
     if streak <= 1:
-        print(Fore.GREEN + ' You have worn put the computer you win!')
+        print( ' You have worn put the computer you win!')
         game_active = False
 # trick selections with odds
 
 # ollie
     elif trickSelection == 'ol' or trickSelection == 'ollie':
         if random.choice(odds) >= 30:
-            print(name + Fore.GREEN + ' landed an  OLLIE! 🛹')
+            print(name +' landed an  OLLIE! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name + random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -103,12 +111,12 @@ while game_active == True:
 # kickflip
     elif trickSelection == 'kf' or trickSelection == 'kickflip':
         if random.choice(odds) >= 55:
-            print(name + Fore.GREEN + ' Landed a KICKFLIP! 🛹')
+            print(name + ' Landed a KICKFLIP! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name +random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -118,12 +126,12 @@ while game_active == True:
 # heelflip
     elif trickSelection == 'hf' or trickSelection == 'heelflip':
         if random.choice(odds) >= 60:
-            print(name + Fore.GREEN + ' Landed a HEELFLIP! 🛹')
+            print(name + ' Landed a HEELFLIP! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name + random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -133,12 +141,12 @@ while game_active == True:
 # backside shuvit
     elif trickSelection == 'bssh' or trickSelection == 'bs shuv':
         if random.choice(odds) >= 40:
-            print(name + Fore.GREEN + ' Landed a Backside Shuv! 🛹')
+            print(name + ' Landed a Backside Shuv! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name+ random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -148,12 +156,12 @@ while game_active == True:
 # frontside shuvit
     elif trickSelection == 'fssh' or trickSelection == 'fs shuvit':
         if random.choice(odds) >= 45:
-            print(name + Fore.GREEN + ' Landed a Frontside Shuv! 🛹')
+            print(name + ' Landed a Frontside Shuv! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name+ random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -163,12 +171,12 @@ while game_active == True:
 # frontside 180
     elif trickSelection == 'fs180' or trickSelection == 'fs 180':
         if random.choice(odds) >= 50:
-            print(name + Fore.GREEN + ' Landed Frontside 180! 🛹')
+            print(name + ' Landed Frontside 180! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name + random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -178,12 +186,12 @@ while game_active == True:
 # backside 180
     elif trickSelection == 'bs180' or trickSelection == 'bs 180':
         if random.choice(odds) >= 50:
-            print(name + Fore.GREEN + ' Landed a Backside 180! 🛹')
+            print(name + ' Landed a Backside 180! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name +random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
@@ -193,23 +201,23 @@ while game_active == True:
 # treflip
     elif trickSelection == 'tre' or trickSelection == 'treflip':
         if random.choice(odds) >= 75:
-            print(name + Fore.GREEN + ' Landed a TREFLIP! 🛹')
+            print(name + ' Landed a TREFLIP! 🛹')
             print()
             streak -= 1
 
         else:
-            print(name + Fore.RED + random.choice(bails))
+            print(name + random.choice(bails))
             print()
             checkLetter()
             if skate == ['S', 'K', 'A', 'T', 'E']:
                 game_active = False
 # list
     elif trickSelection == 'list':
-        print(Fore.LIGHTWHITE_EX +"TRICKLIST:"), print(Fore.LIGHTWHITE_EX, trickDict)
+        print("TRICKLIST:"), print( trickDict)
 
 # else condition
     else:
-        print(name + Fore.RED + ' flailed their board! 🛹')
+        print(name + ' flailed their board! 🛹')
         checkLetter()
 
         print(trickDict)
