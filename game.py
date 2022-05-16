@@ -18,6 +18,15 @@ streak = 6
 # function to check used tricks
 
 # functions trick makes and bails
+# TODO
+#  add turn based system
+#  cpu vs player turn
+#  cpu needs own stats for tricks
+#  if cpu turn randomize trick that arent used on 'usedTricks' List
+#  if trick is successful proceed
+#  if unsuccessful switch turn to player
+#  if player turn ask for trick
+#  if trick is successful proceed
 
 
 def trickLand():
