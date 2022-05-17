@@ -15,6 +15,11 @@ bails = (' rolled their ankle!', ' creditcard themselves!', ' got a shinner!', '
 streak = 6
 # function to check used tricks
 
+<<<<<<< HEAD
+=======
+# functions trick makes and bails
+# TODO
+>>>>>>> 6a54325f274eb5a15a99c7f4a5c83d5b00b4fab0
 #  add turn based system
 #  cpu vs player turn
 #  cpu needs own stats for tricks
@@ -22,6 +27,25 @@ streak = 6
 #  if trick is successful proceed
 #  if unsuccessful switch turn to player
 #  if player turn ask for trick
+<<<<<<< HEAD
+=======
+#  if trick is successful proceed
+
+
+def trickLand():
+    print('...')
+    sleep(0.5)
+    print(Fore.CYAN + name + Fore.YELLOW + random.choice(skatjectives) + currentTrick + ' 🛹')
+    print()
+
+
+def trickBail():
+    print('...')
+    sleep(.5)
+    print(name + Fore.RED + random.choice(bails))
+    print()
+
+>>>>>>> 6a54325f274eb5a15a99c7f4a5c83d5b00b4fab0
 
 # function to check current letter
 def checkLetter():
