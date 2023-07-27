@@ -15,6 +15,11 @@ game_active = True
 bails = (' rolled their ankle!', ' creditcard themselves!',' got a shinner!', ' just sucks', ' fell on face', ' broke their board!', ' hit a rock!')
 skatjectives = (' POPPED a ', ' barely landed ', ' snapped a BIG OL ', ' landed a ', ' did a sketchy ')
 streak = 6
+pcTurn = True
+
+
+
+
 # function to check used tricks
 
 # functions trick makes and bails
@@ -72,7 +77,7 @@ print(Fore.CYAN + "Reach S.K.A.T.E. you lose")
 sleep(1)
 print(Fore.CYAN + "good luck!")
 
-print(Fore.GREEN + "TRICKLIST:" + Fore.WHITE +" type 'list' to view during game"), print(Fore.YELLOW, trickDict)
+print(Fore.GREEN + "TRICKLIST:" + Fore.WHITE +" type 'list' to view during game, you can abbr trick names "), print(Fore.YELLOW, trickDict)
 sleep(1.5)
 
 # Game loop
@@ -248,6 +253,8 @@ while game_active == True:
             print('you win')
             sleep(1)
             print('I guess')
+            sleep(1)
+            print('working on player set tricks')
             game_active = False
 
 
